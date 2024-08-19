@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lc_Cell_Sistema_de_Controle.br.com.project.model
 {
-    class Client
+     public class Client
     {
         public int Code { get; set; }
         public string Name { get; set; }

@@ -1,4 +1,5 @@
-﻿using Lc_Cell_Sistema_de_Controle.br.com.project.model;
+﻿using Lc_Cell_Sistema_de_Controle.br.com.project.dao;
+using Lc_Cell_Sistema_de_Controle.br.com.project.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +45,8 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             client.State = txtUf.Text;
 
 
-
+            ClientDAO dao = new ClientDAO();
+            dao.RegisterCustomer(client);
         }
     }
 }

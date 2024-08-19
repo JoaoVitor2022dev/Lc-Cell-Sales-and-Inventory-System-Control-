@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="br.com.project.dao\ClientDAO.cs" />
     <Compile Include="br.com.project.model\Client.cs" />
     <Compile Include="br.com.project.view\FrmClients.cs">
       <SubType>Form</SubType>
@@ -142,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="br.com.project.connection\" />
-    <Folder Include="br.com.project.dao\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
