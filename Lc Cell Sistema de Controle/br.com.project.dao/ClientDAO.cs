@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Lc_Cell_Sistema_de_Controle.br.com.project.model;
 using Mysqlx.Crud;
+using System.Data;
+using MySqlX.XDevAPI.Relational;
 
 namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
 {
@@ -55,6 +57,35 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             {
 
                 MessageBox.Show("Ocorreu um error: " + erro);
+            }
+        }
+        #endregion
+
+        #region list customers
+        public DataTable ListCustomers()
+        {
+            try
+            {
+                // 1 - passo é criar um datatable com sql 
+                DataTable customerTable = new DataTable();
+                string sql = "SELECT * FROM tb_clientes;";
+
+                // 2 - organizar o comando sql no executar 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 3 - passo - criar MysqDataApter para preencher os dados no datatable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(customerTable);
+
+                return customerTable;
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show("Error ao executar o comando sql: " + error);
+                return null;
             }
         }
         #endregion

@@ -61,19 +61,19 @@
             this.CodeClient = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CustomerTable = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.BtnNew = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.TabelaClient = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.TabClient.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabelaClient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerTable)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,6 +84,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(930, 155);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -420,7 +421,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.TabelaClient);
+            this.tabPage2.Controls.Add(this.CustomerTable);
             this.tabPage2.Controls.Add(this.btnSearch);
             this.tabPage2.Controls.Add(this.txtSearch);
             this.tabPage2.Controls.Add(this.label16);
@@ -431,6 +432,46 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // CustomerTable
+            // 
+            this.CustomerTable.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CustomerTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CustomerTable.Location = new System.Drawing.Point(0, 73);
+            this.CustomerTable.Name = "CustomerTable";
+            this.CustomerTable.Size = new System.Drawing.Size(923, 300);
+            this.CustomerTable.TabIndex = 7;
+            this.CustomerTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaClient_CellContentClick);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Navy;
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(546, 8);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(193, 32);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Pesquisar";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(157, 11);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(383, 26);
+            this.txtSearch.TabIndex = 3;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(85, 11);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 22);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Nome:";
             // 
             // BtnNew
             // 
@@ -443,6 +484,7 @@
             this.BtnNew.TabIndex = 2;
             this.BtnNew.Text = "Novo";
             this.BtnNew.UseVisualStyleBackColor = false;
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // BtnSave
             // 
@@ -481,44 +523,6 @@
             this.BtnDelete.Text = "Deletar";
             this.BtnDelete.UseVisualStyleBackColor = false;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(157, 11);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(383, 26);
-            this.txtSearch.TabIndex = 3;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(85, 11);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 22);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Nome:";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Navy;
-            this.btnSearch.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(546, 8);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(193, 32);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "Pesquisar";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // TabelaClient
-            // 
-            this.TabelaClient.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.TabelaClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabelaClient.Location = new System.Drawing.Point(0, 73);
-            this.TabelaClient.Name = "TabelaClient";
-            this.TabelaClient.Size = new System.Drawing.Size(923, 300);
-            this.TabelaClient.TabIndex = 7;
-            // 
             // FrmClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,6 +537,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmClients";
             this.Text = "Cadastrar Formulário";
+            this.Load += new System.EventHandler(this.FrmClients_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.TabClient.ResumeLayout(false);
@@ -540,7 +545,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabelaClient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -584,7 +589,7 @@
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnEdit;
         private System.Windows.Forms.Button BtnDelete;
-        private System.Windows.Forms.DataGridView TabelaClient;
+        private System.Windows.Forms.DataGridView CustomerTable;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label16;
