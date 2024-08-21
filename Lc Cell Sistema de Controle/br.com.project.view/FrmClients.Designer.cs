@@ -58,7 +58,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNameClient = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.CodeClient = new System.Windows.Forms.TextBox();
+            this.txtCodeClient = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.CustomerTable = new System.Windows.Forms.DataGridView();
@@ -136,7 +136,7 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.txtNameClient);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.CodeClient);
+            this.tabPage1.Controls.Add(this.txtCodeClient);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
@@ -402,12 +402,12 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nome: ";
             // 
-            // CodeClient
+            // txtCodeClient
             // 
-            this.CodeClient.Location = new System.Drawing.Point(114, 34);
-            this.CodeClient.Name = "CodeClient";
-            this.CodeClient.Size = new System.Drawing.Size(131, 26);
-            this.CodeClient.TabIndex = 1;
+            this.txtCodeClient.Location = new System.Drawing.Point(114, 34);
+            this.txtCodeClient.Name = "txtCodeClient";
+            this.txtCodeClient.Size = new System.Drawing.Size(131, 26);
+            this.txtCodeClient.TabIndex = 1;
             // 
             // label2
             // 
@@ -438,10 +438,11 @@
             // 
             this.CustomerTable.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.CustomerTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CustomerTable.Location = new System.Drawing.Point(0, 73);
+            this.CustomerTable.Location = new System.Drawing.Point(6, 74);
             this.CustomerTable.Name = "CustomerTable";
             this.CustomerTable.Size = new System.Drawing.Size(923, 300);
             this.CustomerTable.TabIndex = 7;
+            this.CustomerTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CustomerTable_CellClick);
             this.CustomerTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaClient_CellContentClick);
             // 
             // btnSearch
@@ -510,6 +511,7 @@
             this.BtnEdit.TabIndex = 4;
             this.BtnEdit.Text = "Editar";
             this.BtnEdit.UseVisualStyleBackColor = false;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // BtnDelete
             // 
@@ -557,7 +559,7 @@
         private System.Windows.Forms.TabControl TabClient;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox CodeClient;
+        private System.Windows.Forms.TextBox txtCodeClient;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

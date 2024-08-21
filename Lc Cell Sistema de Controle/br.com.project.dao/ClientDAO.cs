@@ -2,14 +2,8 @@
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Lc_Cell_Sistema_de_Controle.br.com.project.model;
-using Mysqlx.Crud;
 using System.Data;
-using MySqlX.XDevAPI.Relational;
 
 namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
 {
@@ -86,6 +80,48 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
 
                 MessageBox.Show("Error ao executar o comando sql: " + error);
                 return null;
+            }
+        }
+        #endregion
+        #region Change customer 
+        public void ChangeCustomer(Client obj)
+        {
+            try
+            {
+                // 1 - Definir o CMD sql - insert into
+                string sql = @"UPDATE tb_clientes
+                             SET nome=@nome, rg=@rg, cpf=@cpf, email=@email, telefone=@telefone, 
+                             celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, 
+                             complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado 
+                             WHERE id=@id";
+
+                // 2 -  Organizar o comando sql     
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", obj.Name);
+                executacmd.Parameters.AddWithValue("@rg", obj.Rg);
+                executacmd.Parameters.AddWithValue("@cpf", obj.Cpf);
+                executacmd.Parameters.AddWithValue("@email", obj.Email);
+                executacmd.Parameters.AddWithValue("@telefone", obj.Telephone);
+                executacmd.Parameters.AddWithValue("@celular", obj.Phone);
+                executacmd.Parameters.AddWithValue("@cep", obj.Cep);
+                executacmd.Parameters.AddWithValue("@endereco", obj.Address);
+                executacmd.Parameters.AddWithValue("@numero", obj.Number);
+                executacmd.Parameters.AddWithValue("@complemento", obj.Complement);
+                executacmd.Parameters.AddWithValue("@bairro", obj.Neighborhood);
+                executacmd.Parameters.AddWithValue("@cidade", obj.City);
+                executacmd.Parameters.AddWithValue("@estado", obj.State);
+                executacmd.Parameters.AddWithValue("@id", obj.Code);
+
+                // 3 - executar o comando sql 
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Informações do cliente alteradas com Sucesso!");
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um error: " + erro);
             }
         }
         #endregion
