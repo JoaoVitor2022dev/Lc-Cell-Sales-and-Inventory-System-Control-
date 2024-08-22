@@ -38,6 +38,10 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
                 //invoking the register method
                 ClientDAO dao = new ClientDAO();
                 dao.RegisterCustomer(client);
+
+                // Programmed method for clearing operating Inputs
+                new Helpers().LimparTela(this);
+                txtUf.SelectedIndex = -1;
             }
             catch (Exception)
             {
@@ -47,18 +51,7 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         private void BtnNew_Click(object sender, EventArgs e)
         {
             /// cleaning the inputs
-            txtNameClient.Clear();
-            txtRg.Clear();
-            txtCpf.Clear();
-            txtEmailClient.Clear();
-            txtTelephoneClient.Clear();
-            txtPhoneClient.Clear();
-            txtCep.Clear();
-            txtAddress.Clear();
-            txtNumberHome.Clear();
-            txtComplement.Clear();
-            txtNeighborhood.Clear();
-            txtCity.Clear();
+            new Helpers().LimparTela(this);
             txtUf.SelectedIndex = -1;
         }
         private void FrmClients_Load(object sender, EventArgs e)
@@ -124,18 +117,7 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
                 CustomerTable.DataSource = dao.ListCustomers();
 
                 /// cleaning the inputs
-                txtNameClient.Clear();
-                txtRg.Clear();
-                txtCpf.Clear();
-                txtEmailClient.Clear();
-                txtTelephoneClient.Clear();
-                txtPhoneClient.Clear();
-                txtCep.Clear();
-                txtAddress.Clear();
-                txtNumberHome.Clear();
-                txtComplement.Clear();
-                txtNeighborhood.Clear();
-                txtCity.Clear();
+                new Helpers().LimparTela(this);
                 txtUf.SelectedIndex = -1;
 
             }

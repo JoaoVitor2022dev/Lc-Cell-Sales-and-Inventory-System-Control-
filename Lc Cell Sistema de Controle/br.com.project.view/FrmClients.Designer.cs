@@ -450,7 +450,7 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Navy;
-            this.btnSearch.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(546, 8);
             this.btnSearch.Name = "btnSearch";
@@ -479,7 +479,7 @@
             // BtnNew
             // 
             this.BtnNew.BackColor = System.Drawing.Color.Navy;
-            this.BtnNew.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNew.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNew.ForeColor = System.Drawing.Color.White;
             this.BtnNew.Location = new System.Drawing.Point(36, 591);
             this.BtnNew.Name = "BtnNew";
@@ -492,7 +492,7 @@
             // BtnSave
             // 
             this.BtnSave.BackColor = System.Drawing.Color.DarkGreen;
-            this.BtnSave.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSave.ForeColor = System.Drawing.Color.White;
             this.BtnSave.Location = new System.Drawing.Point(243, 591);
             this.BtnSave.Name = "BtnSave";
@@ -505,7 +505,7 @@
             // BtnEdit
             // 
             this.BtnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
-            this.BtnEdit.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEdit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEdit.ForeColor = System.Drawing.Color.Black;
             this.BtnEdit.Location = new System.Drawing.Point(462, 591);
             this.BtnEdit.Name = "BtnEdit";
@@ -518,7 +518,7 @@
             // BtnDelete
             // 
             this.BtnDelete.BackColor = System.Drawing.Color.Crimson;
-            this.BtnDelete.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDelete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDelete.ForeColor = System.Drawing.Color.White;
             this.BtnDelete.Location = new System.Drawing.Point(685, 591);
             this.BtnDelete.Name = "BtnDelete";
