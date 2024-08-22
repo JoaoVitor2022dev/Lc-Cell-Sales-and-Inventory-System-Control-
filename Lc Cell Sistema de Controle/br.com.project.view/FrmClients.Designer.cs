@@ -69,6 +69,7 @@
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
+            this.btnCep = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.TabClient.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -110,6 +111,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnCep);
             this.tabPage1.Controls.Add(this.txtUf);
             this.tabPage1.Controls.Add(this.txtCep);
             this.tabPage1.Controls.Add(this.txtPhoneClient);
@@ -525,6 +527,19 @@
             this.BtnDelete.Text = "Deletar";
             this.BtnDelete.UseVisualStyleBackColor = false;
             // 
+            // btnCep
+            // 
+            this.btnCep.BackColor = System.Drawing.Color.Navy;
+            this.btnCep.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCep.ForeColor = System.Drawing.Color.White;
+            this.btnCep.Location = new System.Drawing.Point(610, 158);
+            this.btnCep.Name = "btnCep";
+            this.btnCep.Size = new System.Drawing.Size(133, 32);
+            this.btnCep.TabIndex = 35;
+            this.btnCep.Text = "Pesquisar";
+            this.btnCep.UseVisualStyleBackColor = false;
+            this.btnCep.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,5 +610,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnCep;
     }
 }

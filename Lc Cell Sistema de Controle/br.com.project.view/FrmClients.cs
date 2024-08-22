@@ -1,14 +1,8 @@
 ﻿using Lc_Cell_Sistema_de_Controle.br.com.project.dao;
 using Lc_Cell_Sistema_de_Controle.br.com.project.model;
-using MySqlX.XDevAPI.Relational;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
@@ -148,6 +142,31 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             catch (Exception)
             {
                 MessageBox.Show("Todos os campos devem ser preenchidos");
+            }
+        }
+
+        // search button in the API the customer address
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cep = txtCep.Text;
+
+                string xml = "https://viacep.com.br/ws/" + cep + "/xml/";
+
+                DataSet dados = new DataSet();
+
+                dados.ReadXml(xml);
+
+                txtAddress.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
+                txtNeighborhood.Text = dados.Tables[0].Rows[0]["bairro"].ToString();
+                txtCity.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
+                txtUf.Text = dados.Tables[0].Rows[0]["uf"].ToString();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Endereço não encontrado, por favor digite manualmente.");
             }
         }
         private void tabPage2_Click(object sender, EventArgs e)
