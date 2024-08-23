@@ -83,6 +83,7 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             }
         }
         #endregion
+
         #region Change customer 
         public void ChangeCustomer(Client obj)
         {
@@ -121,6 +122,33 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             }
             catch (Exception erro)
             {
+                MessageBox.Show("Ocorreu um error: " + erro);
+            }
+        }
+        #endregion
+
+        #region deletecustomer
+        public void DeleteCustomer(Client obj)
+        {
+            try
+            {
+                // 1 - Definir o CMD sql - insert into
+                string sql = @"delete from tb_clientes where id = @id";
+
+                // 2 -  Organizar o comando sql     
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", obj.Code);
+
+                // 3 - executar o comando sql 
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Cliente Deletado com Sucesso!");
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+
                 MessageBox.Show("Ocorreu um error: " + erro);
             }
         }

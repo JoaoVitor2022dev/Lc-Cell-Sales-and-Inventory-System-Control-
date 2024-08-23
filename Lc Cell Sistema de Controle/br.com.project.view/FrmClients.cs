@@ -18,7 +18,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             try
             {
                 // method of storing data in the model
-
                 Client client = new Client();
 
                 client.Name = txtNameClient.Text;
@@ -38,6 +37,12 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
                 //invoking the register method
                 ClientDAO dao = new ClientDAO();
                 dao.RegisterCustomer(client);
+
+                // trocar de pagina 
+                TabClient.SelectedTab = tabPage2;
+
+                // listar novamente os dados salvo no cadastro
+                CustomerTable.DataSource = dao.ListCustomers();
 
                 // Programmed method for clearing operating Inputs
                 new Helpers().LimparTela(this);
@@ -66,8 +71,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             txtNameClient.Text = CustomerTable.CurrentRow.Cells[1].Value.ToString();
             txtRg.Text = CustomerTable.CurrentRow.Cells[2].Value.ToString();
             txtCpf.Text = CustomerTable.CurrentRow.Cells[3].Value.ToString();
-
-
             txtEmailClient.Text = CustomerTable.CurrentRow.Cells[4].Value.ToString();
             txtTelephoneClient.Text = CustomerTable.CurrentRow.Cells[5].Value.ToString();
             txtPhoneClient.Text = CustomerTable.CurrentRow.Cells[6].Value.ToString();
@@ -150,6 +153,28 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             {
                 MessageBox.Show("Endereço não encontrado, por favor digite manualmente.");
             }
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            // deletar cliente 
+
+            Client obj = new Client();
+
+            // pegar o codigo 
+            obj.Code = int.Parse(txtCodeClient.Text);
+
+            ClientDAO dao = new ClientDAO();
+
+            dao.DeleteCustomer(obj);
+
+            TabClient.SelectedTab = tabPage2;
+
+            // atualizar os dados do banco de dados 
+            CustomerTable.DataSource = dao.ListCustomers();
+
+            new Helpers().LimparTela(this);
+            txtUf.SelectedIndex = -1;
         }
         private void tabPage2_Click(object sender, EventArgs e)
         {
