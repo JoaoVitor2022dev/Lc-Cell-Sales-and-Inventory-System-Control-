@@ -157,25 +157,57 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            // deletar cliente 
+            try
+            {
+                // deletar cliente 
 
-            Client obj = new Client();
+                Client obj = new Client();
 
-            // pegar o codigo 
-            obj.Code = int.Parse(txtCodeClient.Text);
+                // pegar o codigo 
+                obj.Code = int.Parse(txtCodeClient.Text);
+
+                ClientDAO dao = new ClientDAO();
+
+                dao.DeleteCustomer(obj);
+
+                TabClient.SelectedTab = tabPage2;
+
+                // atualizar os dados do banco de dados 
+                CustomerTable.DataSource = dao.ListCustomers();
+
+                new Helpers().LimparTela(this);
+                txtUf.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos");
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string name = txtSearch.Text;
 
             ClientDAO dao = new ClientDAO();
 
-            dao.DeleteCustomer(obj);
+            CustomerTable.DataSource = dao.SearchCustomerByName(name);
 
-            TabClient.SelectedTab = tabPage2;
-
-            // atualizar os dados do banco de dados 
-            CustomerTable.DataSource = dao.ListCustomers();
-
-            new Helpers().LimparTela(this);
-            txtUf.SelectedIndex = -1;
+            if (CustomerTable.Rows.Count == 0)
+            {
+                CustomerTable.DataSource = dao.ListCustomers();
+            }
         }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string name = "%" + txtSearch.Text + "%";
+
+            ClientDAO dao = new ClientDAO();
+
+            CustomerTable.DataSource = dao.ListCustomerByName(name);
+        }
+
+
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
