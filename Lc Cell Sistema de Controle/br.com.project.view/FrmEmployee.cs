@@ -208,5 +208,28 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
                 MessageBox.Show("Todos os campos devem ser preenchidos");
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string name = txtSearch.Text;
+
+            EmployeeDAO dao = new EmployeeDAO();
+
+            EmployeeTable.DataSource = dao.SearchEmployeeByName(name);
+
+            if (EmployeeTable.Rows.Count == 0)
+            {
+                EmployeeTable.DataSource = dao.ListEmployee();
+            }
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string name = "%" + txtSearch.Text + "%";
+
+            EmployeeDAO dao = new EmployeeDAO();
+
+            EmployeeTable.DataSource = dao.ListEmployeeByName(name);
+        }
     }
 }

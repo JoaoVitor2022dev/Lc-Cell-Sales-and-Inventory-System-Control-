@@ -224,5 +224,10 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         private void tabPage1_Click(object sender, EventArgs e)
         {
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
