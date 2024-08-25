@@ -57,6 +57,8 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
                 // Programmed method for clearing operating Inputs
                 new Helpers().LimparTela(this);
                 txtUf.SelectedIndex = -1;
+                txtPosition.SelectedIndex = -1;
+                txtAccessLevel.SelectedIndex = -1;
             }
             catch (Exception)
             {
