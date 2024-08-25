@@ -176,5 +176,37 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             txtPosition.SelectedIndex = -1;
             txtAccessLevel.SelectedIndex = -1;
         }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // deletar cliente 
+
+                Employee obj = new Employee();
+
+                // pegar o codigo 
+                obj.Code = int.Parse(txtCodeClient.Text);
+
+                EmployeeDAO dao = new EmployeeDAO();
+
+                dao.DeleteEmployee(obj);
+
+                TabEmployee.SelectedTab = tabPage2;
+
+                // atualizar os dados do banco de dados 
+                EmployeeTable.DataSource = dao.ListEmployee();
+
+                /// cleaning the inputs
+                new Helpers().LimparTela(this);
+                txtUf.SelectedIndex = -1;
+                txtPosition.SelectedIndex = -1;
+                txtAccessLevel.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos");
+            }
+        }
     }
 }

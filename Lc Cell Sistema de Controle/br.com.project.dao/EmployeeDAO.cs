@@ -129,5 +129,29 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             }
         }
         #endregion
+
+        #region Delete Employee
+        public void DeleteEmployee(Employee obj)
+        {
+            try
+            {
+                string sql = "DELETE FROM tb_funcionarios WHERE id = @id";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+
+                executacmd.Parameters.AddWithValue("@id", obj.Code);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Cliente Deletado com sucesso com sucesso!");
+                conexao.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"Ocorreu um error: {error}");
+            }
+        }
+        #endregion
     }
 }
