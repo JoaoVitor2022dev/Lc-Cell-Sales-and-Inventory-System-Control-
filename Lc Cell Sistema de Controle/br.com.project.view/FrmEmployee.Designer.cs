@@ -29,8 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.TabEmployee = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtPosition = new System.Windows.Forms.ComboBox();
+            this.txtAccessLevel = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.btnCep = new System.Windows.Forms.Button();
             this.txtUf = new System.Windows.Forms.ComboBox();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
@@ -65,13 +72,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtAccessLevel = new System.Windows.Forms.ComboBox();
-            this.txtPosition = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
@@ -91,6 +91,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(997, 165);
             this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(138, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(269, 29);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Cadastrar Funcionário";
             // 
             // TabEmployee
             // 
@@ -147,6 +158,69 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Pessoais ";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(659, 78);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(208, 26);
+            this.txtPassword.TabIndex = 43;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(572, 78);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(69, 22);
+            this.label19.TabIndex = 42;
+            this.label19.Text = "Senha:";
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.FormattingEnabled = true;
+            this.txtPosition.Items.AddRange(new object[] {
+            "Vendedor",
+            "Supervisor",
+            "Coordenador",
+            "Gerente",
+            "Executivo"});
+            this.txtPosition.Location = new System.Drawing.Point(639, 114);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(228, 26);
+            this.txtPosition.TabIndex = 41;
+            // 
+            // txtAccessLevel
+            // 
+            this.txtAccessLevel.FormattingEnabled = true;
+            this.txtAccessLevel.Items.AddRange(new object[] {
+            "Administrador",
+            "Usuário"});
+            this.txtAccessLevel.Location = new System.Drawing.Point(639, 152);
+            this.txtAccessLevel.Name = "txtAccessLevel";
+            this.txtAccessLevel.Size = new System.Drawing.Size(228, 26);
+            this.txtAccessLevel.TabIndex = 40;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(572, 118);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(72, 22);
+            this.label18.TabIndex = 38;
+            this.label18.Text = "Cargo: ";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(506, 156);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(127, 22);
+            this.label17.TabIndex = 36;
+            this.label17.Text = "Nível Acesso:";
             // 
             // btnCep
             // 
@@ -336,7 +410,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(374, 203);
+            this.label9.Location = new System.Drawing.Point(378, 200);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 22);
             this.label9.TabIndex = 14;
@@ -455,6 +529,7 @@
             this.EmployeeTable.Name = "EmployeeTable";
             this.EmployeeTable.Size = new System.Drawing.Size(923, 300);
             this.EmployeeTable.TabIndex = 7;
+            this.EmployeeTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeTable_CellContentClick);
             // 
             // btnSearch
             // 
@@ -485,80 +560,6 @@
             this.label16.TabIndex = 2;
             this.label16.Text = "Nome:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(138, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cadastrar Funcionário";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(506, 156);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(127, 22);
-            this.label17.TabIndex = 36;
-            this.label17.Text = "Nível Acesso:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(572, 118);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(72, 22);
-            this.label18.TabIndex = 38;
-            this.label18.Text = "Cargo: ";
-            // 
-            // txtAccessLevel
-            // 
-            this.txtAccessLevel.FormattingEnabled = true;
-            this.txtAccessLevel.Items.AddRange(new object[] {
-            "Administrador",
-            "Usuário"});
-            this.txtAccessLevel.Location = new System.Drawing.Point(639, 152);
-            this.txtAccessLevel.Name = "txtAccessLevel";
-            this.txtAccessLevel.Size = new System.Drawing.Size(228, 26);
-            this.txtAccessLevel.TabIndex = 40;
-            // 
-            // txtPosition
-            // 
-            this.txtPosition.FormattingEnabled = true;
-            this.txtPosition.Items.AddRange(new object[] {
-            "Vendedor",
-            "Supervisor",
-            "Coordenador",
-            "Gerente",
-            "Executivo"});
-            this.txtPosition.Location = new System.Drawing.Point(639, 114);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(228, 26);
-            this.txtPosition.TabIndex = 41;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(572, 78);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(69, 22);
-            this.label19.TabIndex = 42;
-            this.label19.Text = "Senha:";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(659, 78);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(208, 26);
-            this.txtPassword.TabIndex = 43;
-            // 
             // BtnDelete
             // 
             this.BtnDelete.BackColor = System.Drawing.Color.Crimson;
@@ -582,6 +583,7 @@
             this.BtnEdit.TabIndex = 8;
             this.BtnEdit.Text = "Editar";
             this.BtnEdit.UseVisualStyleBackColor = false;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // BtnSave
             // 
@@ -607,6 +609,7 @@
             this.BtnNew.TabIndex = 6;
             this.BtnNew.Text = "Novo";
             this.BtnNew.UseVisualStyleBackColor = false;
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // FrmEmployee
             // 
