@@ -476,6 +476,7 @@
             this.BtnDelete.TabIndex = 13;
             this.BtnDelete.Text = "Deletar";
             this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnEdit
             // 
@@ -514,6 +515,7 @@
             this.BtnNew.TabIndex = 10;
             this.BtnNew.Text = "Novo";
             this.BtnNew.UseVisualStyleBackColor = false;
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // FrmSupplier
             // 

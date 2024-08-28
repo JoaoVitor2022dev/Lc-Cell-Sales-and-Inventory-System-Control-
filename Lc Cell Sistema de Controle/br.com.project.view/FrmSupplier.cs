@@ -79,14 +79,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             SupplierDAO dao = new SupplierDAO();
             SupplierTable.DataSource = dao.ListSupplier();
         }
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
@@ -131,12 +123,10 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
                 MessageBox.Show("Todos os campos devem ser preenchidos");
             }
         }
-
         private void SupplierTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtCodeClient.Text = SupplierTable.CurrentRow.Cells[0].Value.ToString();
             txtNameClient.Text = SupplierTable.CurrentRow.Cells[1].Value.ToString();
-           
             txtCnpj.Text = SupplierTable.CurrentRow.Cells[2].Value.ToString();
             txtEmailClient.Text = SupplierTable.CurrentRow.Cells[3].Value.ToString();
             txtTelephoneClient.Text = SupplierTable.CurrentRow.Cells[4].Value.ToString();
@@ -152,6 +142,48 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             //Update the phone number on the consultation page with the values from the input fields
 
             TabSupplier.SelectedTab = tabPage1;
+        }
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnNew_Click(object sender, EventArgs e)
+        {
+            new Helpers().LimparTela(this);
+            txtUf.SelectedIndex = -1;
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // deletar cliente 
+                Supplier supplier = new Supplier();
+
+                // pegar o codigo 
+                supplier.Code = int.Parse(txtCodeClient.Text);
+
+                SupplierDAO dao = new SupplierDAO();
+
+                dao.DeleteSupplier(supplier);
+
+                TabSupplier.SelectedTab = tabPage2;
+
+                // atualizar os dados do banco de dados 
+                SupplierTable.DataSource = dao.ListSupplier();
+
+                new Helpers().LimparTela(this);
+                txtUf.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos");
+            }
         }
     }
 }
