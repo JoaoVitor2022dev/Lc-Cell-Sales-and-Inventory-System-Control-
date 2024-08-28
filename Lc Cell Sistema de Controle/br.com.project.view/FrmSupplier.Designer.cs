@@ -83,6 +83,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(946, 165);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -423,6 +424,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // SupplierTable
             // 
@@ -432,6 +434,7 @@
             this.SupplierTable.Name = "SupplierTable";
             this.SupplierTable.Size = new System.Drawing.Size(923, 300);
             this.SupplierTable.TabIndex = 7;
+            this.SupplierTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SupplierTable_CellContentClick);
             // 
             // btnSearch
             // 
@@ -485,6 +488,7 @@
             this.BtnEdit.TabIndex = 12;
             this.BtnEdit.Text = "Editar";
             this.BtnEdit.UseVisualStyleBackColor = false;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // BtnSave
             // 
@@ -524,6 +528,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmSupplier";
             this.Text = "Cadastro de Fornecedor ";
+            this.Load += new System.EventHandler(this.FrmSupplier_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.TabSupplier.ResumeLayout(false);

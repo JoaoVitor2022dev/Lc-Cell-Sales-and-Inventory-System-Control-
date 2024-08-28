@@ -86,5 +86,46 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             }
         }
         #endregion
+
+        #region 
+        public void EditSupplier(Supplier obj)
+        {
+            try
+            {
+                string sql = @"UPDATE tb_fornecedores 
+                             SET nome=@nome, cnpj=@cnpj, email=@email,
+                             telefone=@telefone, 
+                             celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, 
+                             complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado 
+                             WHERE id=@id";
+
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", obj.Name);
+                executacmd.Parameters.AddWithValue("@cnpj", obj.Cnpj);
+                executacmd.Parameters.AddWithValue("@email", obj.Email);
+                executacmd.Parameters.AddWithValue("@telefone", obj.Telephone);
+                executacmd.Parameters.AddWithValue("@celular", obj.Phone);
+                executacmd.Parameters.AddWithValue("@cep", obj.Cep);
+                executacmd.Parameters.AddWithValue("@endereco", obj.Address);
+                executacmd.Parameters.AddWithValue("@numero", obj.Number);
+                executacmd.Parameters.AddWithValue("@complemento", obj.Complement);
+                executacmd.Parameters.AddWithValue("@bairro", obj.Neighborhood);
+                executacmd.Parameters.AddWithValue("@cidade", obj.City);
+                executacmd.Parameters.AddWithValue("@estado", obj.State);
+                executacmd.Parameters.AddWithValue("@id", obj.Code);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+                MessageBox.Show("Fornecedor Alterado com Sucesso!");
+                conexao.Close();
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"Ocorreu um error: {error}");
+            }
+        }
+        #endregion
     }
 }
