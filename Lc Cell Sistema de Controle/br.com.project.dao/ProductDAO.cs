@@ -227,5 +227,47 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
 
         #endregion
 
+        #region returns product by id
+        public Product ReturnsProductById(int id)
+        {
+            try
+            {
+                // 1 - comando sql 
+                Product produto = new Product();
+
+                string sql = @"SELECT * FROM tb_produtos WHERE id = @id";
+
+                MySqlCommand executedcmd = new MySqlCommand(sql, conexao);
+                executedcmd.Parameters.AddWithValue("@id", id);
+
+                conexao.Open();
+
+                MySqlDataReader reader = executedcmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    produto.Id = reader.GetInt32("id");
+                    produto.Description = reader.GetString("descricao");
+                    produto.Price = reader.GetDecimal("preco");
+                    produto.StockQuantity = reader.GetInt32("qtd_estoque");
+
+                    conexao.Close();
+
+                    return produto;
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum produto encontrado com esse codigo");
+                    conexao.Close();
+                    return null;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Aconteceu o erro: " + err);
+                return null;
+            }
+        }
+        #endregion
     }
 }

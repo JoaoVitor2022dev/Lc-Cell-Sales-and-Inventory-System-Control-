@@ -40,13 +40,43 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             if (e.KeyChar == 13)
             {
                 client = cdao.ReturnCustomersCPF(txtCpf.Text);
-                txtNameClient.Text = client.Name; 
+
+                if (client != null)
+                {
+                    txtNameClient.Text = client.Name;
+                }
+                else
+                {
+                    txtCpf.Clear();
+                    txtCpf.Focus();
+                }
+
             }
         }
 
         private void txtCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void txtCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+               product = pdao.ReturnsProductById(int.Parse(txtCode.Text));
+
+                if (product != null)
+                {
+                    txtDescription.Text = product.Description;
+                    txtPrice.Text = product.Price.ToString();
+                    txtStockQuantity.Text = product.StockQuantity.ToString();   
+                }
+                else
+                {
+                    txtCode.Clear();
+                    txtCode.Focus();
+                }
+            }
         }
 
         private void label6_Click(object sender, EventArgs e)

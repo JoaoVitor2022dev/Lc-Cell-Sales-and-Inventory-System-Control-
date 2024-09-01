@@ -219,7 +219,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
         }
         #endregion
 
-
         #region Return Customers CPF
         public Client ReturnCustomersCPF(string cpf)
         {
