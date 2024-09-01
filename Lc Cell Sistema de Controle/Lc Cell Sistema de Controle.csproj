@@ -105,6 +105,7 @@
     <Compile Include="br.com.project.model\Client.cs" />
     <Compile Include="br.com.project.model\Employee.cs" />
     <Compile Include="br.com.project.model\Helpers.cs" />
+    <Compile Include="br.com.project.model\ItemSale.cs" />
     <Compile Include="br.com.project.model\Product.cs" />
     <Compile Include="br.com.project.model\Supplier.cs" />
     <Compile Include="br.com.project.view\FrmClients.cs">

@@ -308,6 +308,7 @@
             this.btnPayment.TabIndex = 46;
             this.btnPayment.Text = "Pagamento";
             this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // btnExit
             // 
