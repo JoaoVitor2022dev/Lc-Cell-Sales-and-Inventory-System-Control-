@@ -14,7 +14,7 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
 {
     public partial class FrmSales : Form
     {
-        Client clent = new Client();
+        Client client = new Client();
         ClientDAO cdao = new ClientDAO();
 
         Product product = new Product();
@@ -34,6 +34,21 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         {
 
         }
+
+        private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                client = cdao.ReturnCustomersCPF(txtCpf.Text);
+                txtNameClient.Text = client.Name; 
+            }
+        }
+
+        private void txtCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
         private void label6_Click(object sender, EventArgs e)
         {
 

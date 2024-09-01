@@ -31,21 +31,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.txtNameClient = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtStockQuantity = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRemoveProduct = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtStockQuantity = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.ProductTable = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -81,6 +83,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtCpf);
             this.groupBox1.Controls.Add(this.txtNameClient);
             this.groupBox1.Controls.Add(this.label3);
@@ -91,6 +95,69 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(103, 37);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(116, 24);
+            this.textBox1.TabIndex = 32;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label9.Location = new System.Drawing.Point(58, 36);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 23);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Data:";
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpf.Location = new System.Drawing.Point(104, 87);
+            this.txtCpf.Mask = "000,000,000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(206, 24);
+            this.txtCpf.TabIndex = 30;
+            this.txtCpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCpf_MaskInputRejected);
+            this.txtCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpf_KeyPress);
+            // 
+            // txtNameClient
+            // 
+            this.txtNameClient.BackColor = System.Drawing.Color.White;
+            this.txtNameClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameClient.Location = new System.Drawing.Point(104, 131);
+            this.txtNameClient.Name = "txtNameClient";
+            this.txtNameClient.Size = new System.Drawing.Size(206, 24);
+            this.txtNameClient.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(48, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Nome:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(60, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "CPF: ";
             // 
             // groupBox2
             // 
@@ -111,127 +178,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Produto";
             // 
-            // label2
+            // btnRemoveProduct
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(54, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "CPF: ";
-            // 
-            // txtNameClient
-            // 
-            this.txtNameClient.BackColor = System.Drawing.Color.White;
-            this.txtNameClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameClient.Location = new System.Drawing.Point(104, 104);
-            this.txtNameClient.Name = "txtNameClient";
-            this.txtNameClient.Size = new System.Drawing.Size(206, 24);
-            this.txtNameClient.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(43, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Nome:";
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCpf.Location = new System.Drawing.Point(104, 34);
-            this.txtCpf.Mask = "000,000,000-00";
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(206, 24);
-            this.txtCpf.TabIndex = 30;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(16, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 23);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Código:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(16, 81);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 23);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Descrição:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(14, 134);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 23);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Qtd Estoque:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // txtCode
-            // 
-            this.txtCode.BackColor = System.Drawing.Color.White;
-            this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(94, 29);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(97, 24);
-            this.txtCode.TabIndex = 39;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.BackColor = System.Drawing.Color.White;
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(113, 81);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(276, 24);
-            this.txtDescription.TabIndex = 40;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(205, 134);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 23);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "Preço (R$): ";
-            // 
-            // txtStockQuantity
-            // 
-            this.txtStockQuantity.BackColor = System.Drawing.Color.White;
-            this.txtStockQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStockQuantity.Location = new System.Drawing.Point(124, 136);
-            this.txtStockQuantity.Name = "txtStockQuantity";
-            this.txtStockQuantity.Size = new System.Drawing.Size(75, 24);
-            this.txtStockQuantity.TabIndex = 43;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.BackColor = System.Drawing.Color.White;
-            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(308, 135);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(81, 24);
-            this.txtPrice.TabIndex = 44;
+            this.btnRemoveProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(49)))), ((int)(((byte)(38)))));
+            this.btnRemoveProduct.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveProduct.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveProduct.Location = new System.Drawing.Point(218, 198);
+            this.btnRemoveProduct.Name = "btnRemoveProduct";
+            this.btnRemoveProduct.Size = new System.Drawing.Size(161, 44);
+            this.btnRemoveProduct.TabIndex = 45;
+            this.btnRemoveProduct.Text = "Remover Item";
+            this.btnRemoveProduct.UseVisualStyleBackColor = false;
             // 
             // btnAddProduct
             // 
@@ -245,17 +202,86 @@
             this.btnAddProduct.Text = "Adicionar Item";
             this.btnAddProduct.UseVisualStyleBackColor = false;
             // 
-            // btnRemoveProduct
+            // txtPrice
             // 
-            this.btnRemoveProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(49)))), ((int)(((byte)(38)))));
-            this.btnRemoveProduct.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveProduct.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveProduct.Location = new System.Drawing.Point(218, 198);
-            this.btnRemoveProduct.Name = "btnRemoveProduct";
-            this.btnRemoveProduct.Size = new System.Drawing.Size(161, 44);
-            this.btnRemoveProduct.TabIndex = 45;
-            this.btnRemoveProduct.Text = "Remover Item";
-            this.btnRemoveProduct.UseVisualStyleBackColor = false;
+            this.txtPrice.BackColor = System.Drawing.Color.White;
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(308, 135);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(81, 24);
+            this.txtPrice.TabIndex = 44;
+            // 
+            // txtStockQuantity
+            // 
+            this.txtStockQuantity.BackColor = System.Drawing.Color.White;
+            this.txtStockQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStockQuantity.Location = new System.Drawing.Point(124, 136);
+            this.txtStockQuantity.Name = "txtStockQuantity";
+            this.txtStockQuantity.Size = new System.Drawing.Size(75, 24);
+            this.txtStockQuantity.TabIndex = 43;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(205, 134);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 23);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Preço (R$): ";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.BackColor = System.Drawing.Color.White;
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(113, 81);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(276, 24);
+            this.txtDescription.TabIndex = 40;
+            // 
+            // txtCode
+            // 
+            this.txtCode.BackColor = System.Drawing.Color.White;
+            this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode.Location = new System.Drawing.Point(94, 29);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(97, 24);
+            this.txtCode.TabIndex = 39;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(14, 134);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 23);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Qtd Estoque:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(16, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 23);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Descrição:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(16, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 23);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Código:";
             // 
             // ProductTable
             // 
@@ -376,5 +402,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -218,5 +218,47 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             }
         }
         #endregion
+
+
+        #region Return Customers CPF
+        public Client ReturnCustomersCPF(string cpf)
+        {
+            try
+            {
+                Client obj = new Client();
+
+                // criar o comando sql 
+                string sql = @"SELECT * FROM tb_clientes WHERE cpf = @cpf";
+
+                MySqlCommand executedcmd = new MySqlCommand(sql, conexao);
+                executedcmd.Parameters.AddWithValue("@cpf", cpf);
+
+                conexao.Open();
+
+                MySqlDataReader reader = executedcmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    obj.Code = reader.GetInt32("Id");
+                    obj.Name = reader.GetString("nome");
+                }
+                else
+                {
+                    MessageBox.Show("Cliente não encontrado!");
+                    conexao.Close();
+                    return null;
+                }
+                conexao.Close();
+
+                return obj;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Aconteceu um erro: " + error);
+                conexao.Close();
+                return null;
+            }
+        }
+        #endregion
     }
 }
