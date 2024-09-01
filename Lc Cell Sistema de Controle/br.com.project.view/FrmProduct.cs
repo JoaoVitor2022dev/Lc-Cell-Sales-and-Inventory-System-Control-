@@ -104,7 +104,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             // alterar para guia de dados pessoais 
             TabPorduct.SelectedTab = tabPage1;
         }
-
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             Product product = new Product();
@@ -120,6 +119,29 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             ProductTable.DataSource = dao.listProducts();
 
             TabPorduct.SelectedTab = tabPage2;
+        }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string nome = txtSearch.Text;
+
+            ProductDAO dao = new ProductDAO();
+
+            ProductTable.DataSource = dao.SearchProductsByName(nome);
+
+            if (ProductTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhum Fornecedor encontrado.");
+                ProductTable.DataSource = dao.listProducts();
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string nome = "%" + txtSearch.Text + "%";
+
+            ProductDAO dao = new ProductDAO();
+
+            ProductTable.DataSource = dao.ListProductsByName(nome);
         }
     }
 }
