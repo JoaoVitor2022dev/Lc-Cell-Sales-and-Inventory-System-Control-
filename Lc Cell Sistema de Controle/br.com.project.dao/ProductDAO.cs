@@ -110,5 +110,28 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             }
         }
         #endregion
+
+        #region Delete Product 
+        public void DeleteProduct(Product obj)
+        {
+            try
+            {
+                string sql = "DELETE FROM tb_produtos WHERE id = @id";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", obj.Id);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Produto Deletado com sucesso!");
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu um erro " + erro);
+            }
+        }
+        #endregion
     }
 }

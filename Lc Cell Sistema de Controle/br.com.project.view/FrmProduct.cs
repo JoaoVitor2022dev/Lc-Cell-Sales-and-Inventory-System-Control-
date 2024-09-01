@@ -104,5 +104,22 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             // alterar para guia de dados pessoais 
             TabPorduct.SelectedTab = tabPage1;
         }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            Product product = new Product();
+
+            product.Id = int.Parse(txtCodeClient.Text);
+
+            ProductDAO dao = new ProductDAO();
+
+            dao.DeleteProduct(product);
+
+            new Helpers().LimparTela(this);
+
+            ProductTable.DataSource = dao.listProducts();
+
+            TabPorduct.SelectedTab = tabPage2;
+        }
     }
 }
