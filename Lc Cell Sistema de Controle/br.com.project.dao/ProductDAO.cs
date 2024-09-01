@@ -44,6 +44,7 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             }
         }
         #endregion
+
         #region list products
         public DataTable listProducts()
         {
@@ -82,6 +83,7 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             }
         }
         #endregion
+
         #region Edit Product
         public void EdictProduct(Product obj)
         {

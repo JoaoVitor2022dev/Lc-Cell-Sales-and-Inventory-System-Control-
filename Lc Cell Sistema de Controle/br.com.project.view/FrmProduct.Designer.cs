@@ -51,6 +51,7 @@
             this.BtnEdit = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnNew = new System.Windows.Forms.Button();
+            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.panel1.SuspendLayout();
             this.TabPorduct.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -302,6 +303,13 @@
             this.BtnNew.UseVisualStyleBackColor = false;
             this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
+            // mySqlCommand1
+            // 
+            this.mySqlCommand1.CacheAge = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.EnableCaching = false;
+            this.mySqlCommand1.Transaction = null;
+            // 
             // FrmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,5 +362,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbSupplier;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
     }
 }
