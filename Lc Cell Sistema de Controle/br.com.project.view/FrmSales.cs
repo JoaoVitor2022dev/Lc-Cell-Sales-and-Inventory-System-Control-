@@ -21,20 +21,22 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         ProductDAO pdao = new ProductDAO();
 
         int qtd;
-        decimal prico;
+        decimal price;
         decimal subtotal, total;
 
         DataTable ShoppingCart = new DataTable();
         public FrmSales()
         {
             InitializeComponent();
+
+            ShoppingCart.Columns.Add("Codigo", typeof(string));
+            ShoppingCart.Columns.Add("Produto", typeof(string));
+            ShoppingCart.Columns.Add("Qtd", typeof(int));
+            ShoppingCart.Columns.Add("Preço", typeof(decimal));
+            ShoppingCart.Columns.Add("Subtotal", typeof(decimal));
+
+            ProductTable.DataSource = ShoppingCart;
         }
-
-        private void btnPayment_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -53,12 +55,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
 
             }
         }
-
-        private void txtCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
         private void txtCode_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -78,7 +74,38 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
                 }
             }
         }
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            qtd = int.Parse(txtStockQuantity.Text);
+            price = decimal.Parse(txtPrice.Text);
 
+            subtotal = qtd * price;
+
+            total += subtotal;
+
+            // adicionando produto no carrinho 
+            ShoppingCart.Rows.Add(int.Parse(txtCode.Text), txtDescription.Text, qtd, price, subtotal);
+
+            // adicionar o valor no total 
+            txtTotal.Text = total.ToString();
+
+            // limpando os campos 
+            txtCode.Clear();
+            txtDescription.Clear();
+            txtStockQuantity.Clear();
+            txtPrice.Clear();
+
+            txtCode.Focus();
+        }
+
+        private void txtCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+
+        }
         private void label6_Click(object sender, EventArgs e)
         {
 

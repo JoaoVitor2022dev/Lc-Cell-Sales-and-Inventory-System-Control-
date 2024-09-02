@@ -203,6 +203,7 @@
             this.btnAddProduct.TabIndex = 7;
             this.btnAddProduct.Text = "Adicionar Item";
             this.btnAddProduct.UseVisualStyleBackColor = false;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // txtPrice
             // 
