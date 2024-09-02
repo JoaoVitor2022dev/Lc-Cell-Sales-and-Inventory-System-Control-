@@ -96,8 +96,30 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
 
             txtCode.Focus();
         }
+        private void btnRemoveProduct_Click(object sender, EventArgs e)
+        {
+            // botão remover item 
+            decimal subproduto = decimal.Parse(ProductTable.CurrentRow.Cells[4].Value.ToString());
 
-        private void txtCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+            // selecionando a tabela 
+            int index = ProductTable.CurrentRow.Index;
+
+            // aqui selecionando a limha
+            DataRow linha = ShoppingCart.Rows[index];
+
+            ShoppingCart.Rows.Remove(linha);
+
+            ShoppingCart.AcceptChanges();
+
+            // subtração do total 
+
+            total -= subproduto;
+
+            txtTotal.Text = total.ToString();
+
+            MessageBox.Show("Item Removido do carrinho com sucesso!");
+        }
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }
@@ -105,7 +127,7 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         {
 
         }
-        private void label6_Click(object sender, EventArgs e)
+        private void txtCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
