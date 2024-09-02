@@ -249,7 +249,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
                     produto.Id = reader.GetInt32("id");
                     produto.Description = reader.GetString("descricao");
                     produto.Price = reader.GetDecimal("preco");
-                    produto.StockQuantity = reader.GetInt32("qtd_estoque");
 
                     conexao.Close();
 

@@ -65,7 +65,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
                 {
                     txtDescription.Text = product.Description;
                     txtPrice.Text = product.Price.ToString();
-                    txtStockQuantity.Text = product.StockQuantity.ToString();   
                 }
                 else
                 {
