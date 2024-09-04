@@ -428,7 +428,6 @@
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.DataGridView ProductTable;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnExit;
@@ -436,5 +435,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.TextBox txtTotal;
     }
 }

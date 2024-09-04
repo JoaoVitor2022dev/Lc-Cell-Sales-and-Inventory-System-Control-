@@ -37,7 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textCreditCard = new System.Windows.Forms.TextBox();
             this.textExchangeMoney = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTotalPayment = new System.Windows.Forms.TextBox();
             this.btnPayment = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -133,14 +133,14 @@
             this.textExchangeMoney.Size = new System.Drawing.Size(235, 26);
             this.textExchangeMoney.TabIndex = 48;
             // 
-            // textBox3
+            // txtTotalPayment
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(210, 275);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(235, 26);
-            this.textBox3.TabIndex = 49;
+            this.txtTotalPayment.BackColor = System.Drawing.Color.White;
+            this.txtTotalPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalPayment.Location = new System.Drawing.Point(210, 275);
+            this.txtTotalPayment.Name = "txtTotalPayment";
+            this.txtTotalPayment.Size = new System.Drawing.Size(235, 26);
+            this.txtTotalPayment.TabIndex = 49;
             // 
             // btnPayment
             // 
@@ -153,6 +153,7 @@
             this.btnPayment.TabIndex = 50;
             this.btnPayment.Text = "Finalizar Venda";
             this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // FrmPayments
             // 
@@ -160,7 +161,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 455);
             this.Controls.Add(this.btnPayment);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTotalPayment);
             this.Controls.Add(this.textExchangeMoney);
             this.Controls.Add(this.textCreditCard);
             this.Controls.Add(this.label5);
@@ -189,7 +190,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textCreditCard;
         private System.Windows.Forms.TextBox textExchangeMoney;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button btnPayment;
+        public System.Windows.Forms.TextBox txtTotalPayment;
     }
 }

@@ -37,6 +37,8 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
 
             ProductTable.DataSource = ShoppingCart;
         }
+
+
         private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -75,26 +77,33 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         }
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            qtd = int.Parse(txtStockQuantity.Text);
-            price = decimal.Parse(txtPrice.Text);
+            try
+            {
+                qtd = int.Parse(txtStockQuantity.Text);
+                price = decimal.Parse(txtPrice.Text);
 
-            subtotal = qtd * price;
+                subtotal = qtd * price;
 
-            total += subtotal;
+                total += subtotal;
 
-            // adicionando produto no carrinho 
-            ShoppingCart.Rows.Add(int.Parse(txtCode.Text), txtDescription.Text, qtd, price, subtotal);
+                // adicionando produto no carrinho 
+                ShoppingCart.Rows.Add(int.Parse(txtCode.Text), txtDescription.Text, qtd, price, subtotal);
 
-            // adicionar o valor no total 
-            txtTotal.Text = total.ToString();
+                // adicionar o valor no total 
+                txtTotal.Text = total.ToString();
 
-            // limpando os campos 
-            txtCode.Clear();
-            txtDescription.Clear();
-            txtStockQuantity.Clear();
-            txtPrice.Clear();
+                // limpando os campos 
+                txtCode.Clear();
+                txtDescription.Clear();
+                txtStockQuantity.Clear();
+                txtPrice.Clear();
 
-            txtCode.Focus();
+                txtCode.Focus();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Digite o código do produto");
+            }
         }
         private void btnRemoveProduct_Click(object sender, EventArgs e)
         {
@@ -125,6 +134,13 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         }
         private void btnPayment_Click(object sender, EventArgs e)
         {
+            // instaciar a tela de pagamento 
+
+            FrmPayments TelaPaymanet = new FrmPayments(client, ShoppingCart);
+
+            TelaPaymanet.txtTotalPayment.Text = total.ToString();
+
+            TelaPaymanet.ShowDialog();
 
         }
         private void txtCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

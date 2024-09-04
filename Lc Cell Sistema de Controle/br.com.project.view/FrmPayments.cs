@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Lc_Cell_Sistema_de_Controle.br.com.project.dao;
+using Lc_Cell_Sistema_de_Controle.br.com.project.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,19 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
 {
     public partial class FrmPayments : Form
     {
-        public FrmPayments()
+        Client client = new Client();
+
+        DataTable shoppingCart = new DataTable();
+        public FrmPayments(Client cliente, DataTable shoppingCart)
         {
             InitializeComponent();
+            this.client = cliente;
+            this.shoppingCart = shoppingCart;
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
