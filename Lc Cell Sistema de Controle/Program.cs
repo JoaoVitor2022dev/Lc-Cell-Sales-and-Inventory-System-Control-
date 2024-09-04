@@ -17,7 +17,7 @@ namespace Lc_Cell_Sistema_de_Controle
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmSales());
+            Application.Run(new FrmPayments());
         }
     }
 }
