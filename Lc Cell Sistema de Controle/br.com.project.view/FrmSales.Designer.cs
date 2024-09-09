@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTimeNow = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.txtNameClient = new System.Windows.Forms.TextBox();
@@ -85,7 +85,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtTimeNow);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtCpf);
             this.groupBox1.Controls.Add(this.txtNameClient);
@@ -98,14 +98,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
-            // textBox1
+            // txtTimeNow
             // 
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(103, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 24);
-            this.textBox1.TabIndex = 32;
+            this.txtTimeNow.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtTimeNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimeNow.Location = new System.Drawing.Point(103, 37);
+            this.txtTimeNow.Name = "txtTimeNow";
+            this.txtTimeNow.Size = new System.Drawing.Size(116, 24);
+            this.txtTimeNow.TabIndex = 32;
             // 
             // label9
             // 
@@ -392,6 +392,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmSales";
             this.Text = "Tela de vendas";
+            this.Load += new System.EventHandler(this.FrmSales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -431,7 +432,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTimeNow;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;

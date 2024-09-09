@@ -15,13 +15,14 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
     public partial class FrmPayments : Form
     {
         Client client = new Client();
-
         DataTable shoppingCart = new DataTable();
-        public FrmPayments(Client cliente, DataTable shoppingCart)
+        DateTime currentDate;
+        public FrmPayments(Client cliente, DataTable shoppingCart, DateTime currentDate)
         {
             InitializeComponent();
             this.client = cliente;
             this.shoppingCart = shoppingCart;
+            this.currentDate = currentDate;
         }
 
         private void btnPayment_Click(object sender, EventArgs e)

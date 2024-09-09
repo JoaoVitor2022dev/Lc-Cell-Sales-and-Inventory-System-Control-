@@ -136,13 +136,22 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         {
             // instaciar a tela de pagamento 
 
-            FrmPayments TelaPaymanet = new FrmPayments(client, ShoppingCart);
+            DateTime currentDate = DateTime.Parse(txtTimeNow.Text);
 
-            TelaPaymanet.txtTotalPayment.Text = total.ToString();
+            FrmPayments TelaPaymanet = new FrmPayments(client, ShoppingCart, currentDate);
+
+            TelaPaymanet.txtTotalPayment.Text = total.ToString("dd/MM/yyyy");
 
             TelaPaymanet.ShowDialog();
 
         }
+
+        private void FrmSales_Load(object sender, EventArgs e)
+        {
+            // Time now 
+            txtTimeNow.Text = DateTime.Now.ToShortDateString();
+        }
+
         private void txtCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
