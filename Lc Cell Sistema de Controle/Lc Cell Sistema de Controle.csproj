@@ -101,12 +101,14 @@
     <Compile Include="br.com.project.dao\ClientDAO.cs" />
     <Compile Include="br.com.project.dao\EmployeeDAO.cs" />
     <Compile Include="br.com.project.dao\ProductDAO.cs" />
+    <Compile Include="br.com.project.dao\SaleDAO.cs" />
     <Compile Include="br.com.project.dao\SupplierDAO.cs" />
     <Compile Include="br.com.project.model\Client.cs" />
     <Compile Include="br.com.project.model\Employee.cs" />
     <Compile Include="br.com.project.model\Helpers.cs" />
     <Compile Include="br.com.project.model\ItemSale.cs" />
     <Compile Include="br.com.project.model\Product.cs" />
+    <Compile Include="br.com.project.model\Sale.cs" />
     <Compile Include="br.com.project.model\Supplier.cs" />
     <Compile Include="br.com.project.view\FrmClients.cs">
       <SubType>Form</SubType>
