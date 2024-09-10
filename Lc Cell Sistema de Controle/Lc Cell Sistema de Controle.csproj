@@ -100,6 +100,7 @@
   <ItemGroup>
     <Compile Include="br.com.project.dao\ClientDAO.cs" />
     <Compile Include="br.com.project.dao\EmployeeDAO.cs" />
+    <Compile Include="br.com.project.dao\ItemSaleDAO.cs" />
     <Compile Include="br.com.project.dao\ProductDAO.cs" />
     <Compile Include="br.com.project.dao\SaleDAO.cs" />
     <Compile Include="br.com.project.dao\SupplierDAO.cs" />
