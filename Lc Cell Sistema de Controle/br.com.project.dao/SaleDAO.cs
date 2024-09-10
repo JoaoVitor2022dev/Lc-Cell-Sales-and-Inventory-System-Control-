@@ -46,5 +46,37 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             }
         }
         #endregion
+
+        #region Method that returns the final sale ID
+        public int returnsLastId()
+        {
+            try
+            {
+                int idVenda = 0;
+
+                string sql = @"SELECT MAX(id) id FROM tb_vendas";
+
+                MySqlCommand executecmdsql = new MySqlCommand(sql, conexao);
+
+                conexao.Open();
+
+                MySqlDataReader reader = executecmdsql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    idVenda = reader.GetInt32(0);
+                }
+                conexao.Close();
+
+                return idVenda;
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Ocorreu um erro: " + err);
+                return 0;
+            }
+        }
+        #endregion
     }
 }
