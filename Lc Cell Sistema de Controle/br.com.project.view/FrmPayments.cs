@@ -99,7 +99,7 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         {
             txtMoney.Text = "0,00";
             txtCard.Text = "0,00";
-            txtTotal.Text = "0,00";
+            texchangeMoney.Text = "0,00";
         }
     }
 }

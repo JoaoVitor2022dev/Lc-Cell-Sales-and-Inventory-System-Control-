@@ -136,10 +136,11 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
 
             TelaPaymanet.txtTotal.Text = total.ToString();
 
+            this.Hide();
+
             TelaPaymanet.ShowDialog();
 
-
-
+            this.Close();
         }
         private void FrmSales_Load(object sender, EventArgs e)
         {
