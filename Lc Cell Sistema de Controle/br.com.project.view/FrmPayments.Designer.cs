@@ -35,10 +35,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textCreditCard = new System.Windows.Forms.TextBox();
-            this.textExchangeMoney = new System.Windows.Forms.TextBox();
-            this.txtTotalPayment = new System.Windows.Forms.TextBox();
+            this.texchangeMoney = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnPayment = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtObservation = new System.Windows.Forms.TextBox();
+            this.txtCard = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,39 +117,30 @@
             this.label5.TabIndex = 46;
             this.label5.Text = "Total:";
             // 
-            // textCreditCard
+            // texchangeMoney
             // 
-            this.textCreditCard.BackColor = System.Drawing.Color.White;
-            this.textCreditCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCreditCard.Location = new System.Drawing.Point(210, 188);
-            this.textCreditCard.Name = "textCreditCard";
-            this.textCreditCard.Size = new System.Drawing.Size(235, 26);
-            this.textCreditCard.TabIndex = 47;
+            this.texchangeMoney.BackColor = System.Drawing.Color.White;
+            this.texchangeMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.texchangeMoney.Location = new System.Drawing.Point(210, 231);
+            this.texchangeMoney.Name = "texchangeMoney";
+            this.texchangeMoney.Size = new System.Drawing.Size(235, 26);
+            this.texchangeMoney.TabIndex = 48;
             // 
-            // textExchangeMoney
+            // txtTotal
             // 
-            this.textExchangeMoney.BackColor = System.Drawing.Color.White;
-            this.textExchangeMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textExchangeMoney.Location = new System.Drawing.Point(210, 231);
-            this.textExchangeMoney.Name = "textExchangeMoney";
-            this.textExchangeMoney.Size = new System.Drawing.Size(235, 26);
-            this.textExchangeMoney.TabIndex = 48;
-            // 
-            // txtTotalPayment
-            // 
-            this.txtTotalPayment.BackColor = System.Drawing.Color.White;
-            this.txtTotalPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPayment.Location = new System.Drawing.Point(210, 275);
-            this.txtTotalPayment.Name = "txtTotalPayment";
-            this.txtTotalPayment.Size = new System.Drawing.Size(235, 26);
-            this.txtTotalPayment.TabIndex = 49;
+            this.txtTotal.BackColor = System.Drawing.Color.White;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(210, 275);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(235, 26);
+            this.txtTotal.TabIndex = 49;
             // 
             // btnPayment
             // 
             this.btnPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.btnPayment.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.ForeColor = System.Drawing.Color.White;
-            this.btnPayment.Location = new System.Drawing.Point(188, 343);
+            this.btnPayment.Location = new System.Drawing.Point(197, 482);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Size = new System.Drawing.Size(257, 56);
             this.btnPayment.TabIndex = 50;
@@ -155,15 +148,47 @@
             this.btnPayment.UseVisualStyleBackColor = false;
             this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(69, 318);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(138, 29);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "Observação: ";
+            // 
+            // txtObservation
+            // 
+            this.txtObservation.BackColor = System.Drawing.Color.White;
+            this.txtObservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservation.Location = new System.Drawing.Point(210, 322);
+            this.txtObservation.Multiline = true;
+            this.txtObservation.Name = "txtObservation";
+            this.txtObservation.Size = new System.Drawing.Size(235, 138);
+            this.txtObservation.TabIndex = 52;
+            // 
+            // txtCard
+            // 
+            this.txtCard.BackColor = System.Drawing.Color.White;
+            this.txtCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCard.Location = new System.Drawing.Point(210, 188);
+            this.txtCard.Name = "txtCard";
+            this.txtCard.Size = new System.Drawing.Size(235, 26);
+            this.txtCard.TabIndex = 53;
+            // 
             // FrmPayments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 455);
+            this.ClientSize = new System.Drawing.Size(618, 585);
+            this.Controls.Add(this.txtCard);
+            this.Controls.Add(this.txtObservation);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnPayment);
-            this.Controls.Add(this.txtTotalPayment);
-            this.Controls.Add(this.textExchangeMoney);
-            this.Controls.Add(this.textCreditCard);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.texchangeMoney);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -172,6 +197,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmPayments";
             this.Text = "Tela de Pagamentos";
+            this.Load += new System.EventHandler(this.FrmPayments_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -188,9 +214,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textCreditCard;
-        private System.Windows.Forms.TextBox textExchangeMoney;
+        private System.Windows.Forms.TextBox texchangeMoney;
         private System.Windows.Forms.Button btnPayment;
-        public System.Windows.Forms.TextBox txtTotalPayment;
+        public System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox txtObservation;
+        private System.Windows.Forms.TextBox txtCard;
     }
 }

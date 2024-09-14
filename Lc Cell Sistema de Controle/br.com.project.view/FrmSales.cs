@@ -37,8 +37,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
 
             ProductTable.DataSource = ShoppingCart;
         }
-
-
         private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -128,10 +126,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
 
             MessageBox.Show("Item Removido do carrinho com sucesso!");
         }
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
         private void btnPayment_Click(object sender, EventArgs e)
         {
             // instaciar a tela de pagamento 
@@ -140,19 +134,23 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
 
             FrmPayments TelaPaymanet = new FrmPayments(client, ShoppingCart, currentDate);
 
-            TelaPaymanet.txtTotalPayment.Text = total.ToString("dd/MM/yyyy");
+            TelaPaymanet.txtTotal.Text = total.ToString();
 
             TelaPaymanet.ShowDialog();
 
-        }
 
+
+        }
         private void FrmSales_Load(object sender, EventArgs e)
         {
             // Time now 
             txtTimeNow.Text = DateTime.Now.ToShortDateString();
         }
-
         private void txtCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

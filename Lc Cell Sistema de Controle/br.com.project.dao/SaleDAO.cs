@@ -48,7 +48,7 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
         #endregion
 
         #region Method that returns the final sale ID
-        public int returnsLastId()
+        public int returnsLastIdSale()
         {
             try
             {

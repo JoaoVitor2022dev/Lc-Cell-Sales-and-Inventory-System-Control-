@@ -2,6 +2,7 @@
 using Lc_Cell_Sistema_de_Controle.br.com.projet.connection;
 using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -265,6 +266,65 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             {
                 MessageBox.Show("Aconteceu o erro: " + err);
                 return null;
+            }
+        }
+        #endregion
+
+        #region Method of returning the current stock of products
+        public int ReturningCurrentStockProducts(int idproduto)
+        {
+            try
+            {
+                string sql = @"SELECT qtd_estoque FROM tb_produtos WHERE id = @id";
+                int qtd_estoque = 0;
+
+                // organizar e arrumar o comando sql 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", idproduto);
+
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    qtd_estoque = reader.GetInt32("qtd_estoque");
+                    conexao.Close();
+                }
+
+                return qtd_estoque;
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Aconteceu um erro: {err}");
+                return 0;
+            }
+        }
+        #endregion
+
+        #region Method to lower stock
+        public void LowerStock(int idproduto, int qtdestoque)
+        {
+            try
+            {
+                // 1 - primeiro paso criar o comando sql 
+                string sql = "UPDATE tb_produtos SET qtd_estoque = @qtd WHERE id = @id";
+
+                // organizar e arrumar o comando sql 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@qtd", qtdestoque);
+                executacmd.Parameters.AddWithValue("@id", idproduto);
+
+                // abrir a conexao e executar o comando 
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                conexao.Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Aconteceu um erro: {err}");
+                conexao.Close();
             }
         }
         #endregion
