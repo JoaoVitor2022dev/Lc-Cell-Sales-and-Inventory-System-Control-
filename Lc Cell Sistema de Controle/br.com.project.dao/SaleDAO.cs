@@ -3,6 +3,7 @@ using Lc_Cell_Sistema_de_Controle.br.com.projet.connection;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,6 +80,43 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
         }
         #endregion
 
+        #region Method of Listing Sales
+        public DataTable ListSales()
+        {
+            try
+            {
+                //  criar um data table
+                DataTable HistoryTable = new DataTable();
+
+
+                // criar um comando SQL 
+                string sql = @" SELECT V.id as 'Código',
+                                V.data_venda as 'Data da venda',
+                                C.nome as 'Cliente',
+                                V.total_venda as 'Total',
+                                V.observacoes as 'Obs' 
+                                FROM tb_vendas AS V JOIN tb_clientes AS C ON (V.cliente_id = C.id)
+                                ";
+
+                // execuatr o comando sql 
+                MySqlCommand executecmdsql = new MySqlCommand(sql, conexao);
+
+                conexao.Open();
+                executecmdsql.ExecuteNonQuery();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(executecmdsql);
+                da.Fill(HistoryTable);
+
+                return HistoryTable;
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Erro ao executar o comando SQL: {err}");
+                return null;
+            }
+        }
+        #endregion
 
     }
 }
