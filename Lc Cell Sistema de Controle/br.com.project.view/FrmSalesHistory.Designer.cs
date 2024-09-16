@@ -130,6 +130,7 @@
             this.btnSearch.TabIndex = 47;
             this.btnSearch.Text = "Pesquisa";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // SaleTable
             // 

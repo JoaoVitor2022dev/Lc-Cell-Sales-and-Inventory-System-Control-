@@ -118,8 +118,8 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
         }
         #endregion
 
-        #region Metodo de ListarVendasPorPeriodo
-        public DataTable ListarVendasPoPeriodos(DateTime datainicio, DateTime datafim)
+        #region List Sales By Period Method
+        public DataTable ListSalesPerPeriods(DateTime datainicio, DateTime datafim)
         {
             try
             {
