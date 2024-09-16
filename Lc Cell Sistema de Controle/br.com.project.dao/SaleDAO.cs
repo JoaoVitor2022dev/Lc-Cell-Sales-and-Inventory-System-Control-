@@ -118,5 +118,46 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
         }
         #endregion
 
+        #region Metodo de ListarVendasPorPeriodo
+        public DataTable ListarVendasPoPeriodos(DateTime datainicio, DateTime datafim)
+        {
+            try
+            {
+                //  criar um data table
+                DataTable TabelaHistorico = new DataTable();
+
+
+                // criar um comando SQL 
+                string sql = @" SELECT V.id as 'Código',
+                                V.data_venda as 'Data da venda',
+                                C.nome as 'Cliente',
+                                V.total_venda as 'Total',
+                                V.observacoes as 'Obs' 
+                                FROM tb_vendas AS V JOIN tb_clientes AS C ON (V.cliente_id = C.id)
+
+                                WHERE V.data_venda BETWEEN @datainicio AND @datafim;";
+
+                // execuatr o comando sql 
+                MySqlCommand executecmdsql = new MySqlCommand(sql, conexao);
+                executecmdsql.Parameters.AddWithValue("@datainicio", datainicio);
+                executecmdsql.Parameters.AddWithValue("@datafim", datafim);
+
+                conexao.Open();
+                executecmdsql.ExecuteNonQuery();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(executecmdsql);
+                da.Fill(TabelaHistorico);
+
+                return TabelaHistorico;
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Erro ao executar o comando SQL: {err}");
+                return null;
+            }
+        }
+        #endregion
+
     }
 }

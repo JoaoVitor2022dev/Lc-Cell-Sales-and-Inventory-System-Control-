@@ -151,6 +151,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmSalesHistory";
             this.Text = "Histórico de Vendas ";
+            this.Load += new System.EventHandler(this.FrmSalesHistory_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
