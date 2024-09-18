@@ -41,10 +41,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.SaleTable = new System.Windows.Forms.DataGridView();
+            this.ItemSaleTable = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SaleTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemSaleTable)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -165,11 +165,11 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "Cliente: ";
             // 
-            // SaleTable
+            // ItemSaleTable
             // 
-            this.SaleTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.SaleTable.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.SaleTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.ItemSaleTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ItemSaleTable.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ItemSaleTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,11 +177,11 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SaleTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.SaleTable.ColumnHeadersHeight = 24;
-            this.SaleTable.GridColor = System.Drawing.Color.Black;
-            this.SaleTable.Location = new System.Drawing.Point(7, 493);
-            this.SaleTable.Name = "SaleTable";
+            this.ItemSaleTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.ItemSaleTable.ColumnHeadersHeight = 24;
+            this.ItemSaleTable.GridColor = System.Drawing.Color.Black;
+            this.ItemSaleTable.Location = new System.Drawing.Point(7, 493);
+            this.ItemSaleTable.Name = "ItemSaleTable";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,26 +189,27 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SaleTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.SaleTable.Size = new System.Drawing.Size(810, 186);
-            this.SaleTable.TabIndex = 9;
-            this.SaleTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SaleTable_CellClick);
+            this.ItemSaleTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.ItemSaleTable.Size = new System.Drawing.Size(810, 186);
+            this.ItemSaleTable.TabIndex = 9;
+            this.ItemSaleTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SaleTable_CellClick);
             // 
             // FrmDetailSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 691);
-            this.Controls.Add(this.SaleTable);
+            this.Controls.Add(this.ItemSaleTable);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "FrmDetailSale";
             this.Text = "FrmDetailSale";
+            this.Load += new System.EventHandler(this.FrmDetailSale_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SaleTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemSaleTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -220,7 +221,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView SaleTable;
+        private System.Windows.Forms.DataGridView ItemSaleTable;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox txtObservation;

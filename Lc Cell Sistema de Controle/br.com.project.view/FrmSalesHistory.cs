@@ -39,7 +39,10 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         {
             // CRIAR UMA INSTACIA PARA O TELA
 
-            FrmDetailSale Tela = new FrmDetailSale();
+            // passar o id do venda 
+            int id_venda = int.Parse(SaleTable.CurrentRow.Cells[0].Value.ToString());
+
+            FrmDetailSale Tela = new FrmDetailSale(id_venda);
 
             DateTime DataSale = Convert.ToDateTime(SaleTable.CurrentRow.Cells[1].Value.ToString());
 
