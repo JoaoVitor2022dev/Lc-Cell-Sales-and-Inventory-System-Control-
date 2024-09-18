@@ -24,11 +24,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             SaleTable.DefaultCellStyle.ForeColor = Color.Black;
             SaleTable.DataSource = dao.ListSales();
         }
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             DateTime DateStart, DateEnd;
@@ -40,14 +35,11 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
 
             SaleTable.DataSource = dao.ListSalesPerPeriods(DateStart, DateEnd);
         }
-
         private void SaleTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // CRIAR UMA INSTACIA PARA O TELA
 
             FrmDetailSale Tela = new FrmDetailSale();
-
-       
 
             DateTime DataSale = Convert.ToDateTime(SaleTable.CurrentRow.Cells[1].Value.ToString());
 
@@ -57,17 +49,18 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
             Tela.txtObservation.Text = SaleTable.CurrentRow.Cells[4].Value.ToString();
 
             Tela.ShowDialog();
-
         }
-
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
-
         private void SaleTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
+        }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -3,6 +3,7 @@ using Lc_Cell_Sistema_de_Controle.br.com.projet.connection;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -42,6 +43,52 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
             catch (Exception err)
             {
                 MessageBox.Show($"Ocorreu um erro: {err}");
+            }
+        }
+        #endregion
+
+        #region Method to list all items for sale
+        public DataTable ListAllItemsForSale(int id_venda)
+        {
+            try
+            {
+                //  criar um data table
+                DataTable TabelaItens = new DataTable();
+
+
+                // criar um comando SQL 
+                string sql = @"SELECT i.id        AS 'Código',
+                                      p.descricao AS 'Descrição', 
+                                      i.qtd       AS 'Quantidade', 
+                                      p.preco     AS 'Preço',
+                                      i.subtotal  AS 'SubTotal'
+                               FROM 
+                                      tb_itensvendas AS i
+                               JOIN 
+                                      tb_produtos AS p
+                                 ON 
+                                      i.produto_id = p.id
+                              WHERE 
+                                      i.venda_id = @venda_id;";
+
+                // execuatr o comando sql 
+                MySqlCommand executecmdsql = new MySqlCommand(sql, conexao);
+                executecmdsql.Parameters.AddWithValue("@venda_id", id_venda);
+
+
+                conexao.Open();
+                executecmdsql.ExecuteNonQuery();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(executecmdsql);
+                da.Fill(TabelaItens);
+
+                return TabelaItens;
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Erro ao executar o comando SQL: {err}");
+                return null;
             }
         }
         #endregion
