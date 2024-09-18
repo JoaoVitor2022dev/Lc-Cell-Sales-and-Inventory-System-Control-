@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textTotalSale = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtObservation = new System.Windows.Forms.TextBox();
+            this.textDate = new System.Windows.Forms.TextBox();
+            this.txtClient = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.SaleTable = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtClient = new System.Windows.Forms.TextBox();
-            this.textDate = new System.Windows.Forms.TextBox();
-            this.txtObservation = new System.Windows.Forms.TextBox();
-            this.textTotalSale = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaleTable)).BeginInit();
@@ -84,6 +84,65 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Item de Venda";
             // 
+            // textTotalSale
+            // 
+            this.textTotalSale.BackColor = System.Drawing.Color.White;
+            this.textTotalSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTotalSale.Location = new System.Drawing.Point(535, 43);
+            this.textTotalSale.Name = "textTotalSale";
+            this.textTotalSale.Size = new System.Drawing.Size(188, 26);
+            this.textTotalSale.TabIndex = 55;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(410, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 23);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "Total da Venda:";
+            // 
+            // txtObservation
+            // 
+            this.txtObservation.BackColor = System.Drawing.Color.White;
+            this.txtObservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservation.Location = new System.Drawing.Point(143, 145);
+            this.txtObservation.Multiline = true;
+            this.txtObservation.Name = "txtObservation";
+            this.txtObservation.Size = new System.Drawing.Size(580, 138);
+            this.txtObservation.TabIndex = 53;
+            // 
+            // textDate
+            // 
+            this.textDate.BackColor = System.Drawing.Color.White;
+            this.textDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDate.Location = new System.Drawing.Point(143, 92);
+            this.textDate.Name = "textDate";
+            this.textDate.Size = new System.Drawing.Size(235, 26);
+            this.textDate.TabIndex = 43;
+            // 
+            // txtClient
+            // 
+            this.txtClient.BackColor = System.Drawing.Color.White;
+            this.txtClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClient.Location = new System.Drawing.Point(143, 40);
+            this.txtClient.Name = "txtClient";
+            this.txtClient.Size = new System.Drawing.Size(235, 26);
+            this.txtClient.TabIndex = 42;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(26, 145);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 23);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Observação: ";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -111,87 +170,29 @@
             this.SaleTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.SaleTable.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.SaleTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SaleTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SaleTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.SaleTable.ColumnHeadersHeight = 24;
             this.SaleTable.GridColor = System.Drawing.Color.Black;
             this.SaleTable.Location = new System.Drawing.Point(7, 493);
             this.SaleTable.Name = "SaleTable";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SaleTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SaleTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.SaleTable.Size = new System.Drawing.Size(810, 186);
             this.SaleTable.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(26, 145);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 23);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Observação: ";
-            // 
-            // txtClient
-            // 
-            this.txtClient.BackColor = System.Drawing.Color.White;
-            this.txtClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClient.Location = new System.Drawing.Point(143, 40);
-            this.txtClient.Name = "txtClient";
-            this.txtClient.Size = new System.Drawing.Size(235, 26);
-            this.txtClient.TabIndex = 42;
-            // 
-            // textDate
-            // 
-            this.textDate.BackColor = System.Drawing.Color.White;
-            this.textDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDate.Location = new System.Drawing.Point(143, 92);
-            this.textDate.Name = "textDate";
-            this.textDate.Size = new System.Drawing.Size(235, 26);
-            this.textDate.TabIndex = 43;
-            // 
-            // txtObservation
-            // 
-            this.txtObservation.BackColor = System.Drawing.Color.White;
-            this.txtObservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObservation.Location = new System.Drawing.Point(143, 145);
-            this.txtObservation.Multiline = true;
-            this.txtObservation.Name = "txtObservation";
-            this.txtObservation.Size = new System.Drawing.Size(580, 138);
-            this.txtObservation.TabIndex = 53;
-            // 
-            // textTotalSale
-            // 
-            this.textTotalSale.BackColor = System.Drawing.Color.White;
-            this.textTotalSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTotalSale.Location = new System.Drawing.Point(535, 43);
-            this.textTotalSale.Name = "textTotalSale";
-            this.textTotalSale.Size = new System.Drawing.Size(188, 26);
-            this.textTotalSale.TabIndex = 55;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(410, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 23);
-            this.label4.TabIndex = 54;
-            this.label4.Text = "Total da Venda:";
+            this.SaleTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SaleTable_CellClick);
             // 
             // FrmDetailSale
             // 
@@ -221,10 +222,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView SaleTable;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textDate;
-        private System.Windows.Forms.TextBox txtClient;
-        private System.Windows.Forms.TextBox textTotalSale;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox txtObservation;
+        public System.Windows.Forms.TextBox textDate;
+        public System.Windows.Forms.TextBox txtClient;
+        public System.Windows.Forms.TextBox textTotalSale;
     }
 }

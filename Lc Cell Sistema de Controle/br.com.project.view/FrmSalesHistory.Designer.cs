@@ -33,12 +33,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.SaleTable = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtDateStart = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtDateEnd = new System.Windows.Forms.DateTimePicker();
+            this.SaleTable = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaleTable)).BeginInit();
@@ -77,6 +77,20 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Venda";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(689, 63);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(115, 31);
+            this.btnSearch.TabIndex = 47;
+            this.btnSearch.Text = "Pesquisa";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label2
             // 
@@ -89,6 +103,16 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "Data Fim:";
             // 
+            // txtDateStart
+            // 
+            this.txtDateStart.CalendarFont = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDateStart.Location = new System.Drawing.Point(440, 66);
+            this.txtDateStart.Name = "txtDateStart";
+            this.txtDateStart.Size = new System.Drawing.Size(231, 26);
+            this.txtDateStart.TabIndex = 32;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -99,6 +123,17 @@
             this.label9.Size = new System.Drawing.Size(94, 23);
             this.label9.TabIndex = 31;
             this.label9.Text = "Data Início:";
+            // 
+            // txtDateEnd
+            // 
+            this.txtDateEnd.CalendarFont = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDateEnd.Location = new System.Drawing.Point(116, 65);
+            this.txtDateEnd.Name = "txtDateEnd";
+            this.txtDateEnd.Size = new System.Drawing.Size(231, 26);
+            this.txtDateEnd.TabIndex = 6;
+            this.txtDateEnd.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // SaleTable
             // 
@@ -127,40 +162,8 @@
             this.SaleTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.SaleTable.Size = new System.Drawing.Size(810, 389);
             this.SaleTable.TabIndex = 8;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.btnSearch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(689, 63);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(115, 31);
-            this.btnSearch.TabIndex = 47;
-            this.btnSearch.Text = "Pesquisa";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtDateStart
-            // 
-            this.txtDateStart.CalendarFont = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtDateStart.Location = new System.Drawing.Point(440, 66);
-            this.txtDateStart.Name = "txtDateStart";
-            this.txtDateStart.Size = new System.Drawing.Size(231, 26);
-            this.txtDateStart.TabIndex = 32;
-            // 
-            // txtDateEnd
-            // 
-            this.txtDateEnd.CalendarFont = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtDateEnd.Location = new System.Drawing.Point(116, 65);
-            this.txtDateEnd.Name = "txtDateEnd";
-            this.txtDateEnd.Size = new System.Drawing.Size(231, 26);
-            this.txtDateEnd.TabIndex = 6;
-            this.txtDateEnd.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.SaleTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SaleTable_CellClick);
+            this.SaleTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SaleTable_CellContentClick);
             // 
             // FrmSalesHistory
             // 

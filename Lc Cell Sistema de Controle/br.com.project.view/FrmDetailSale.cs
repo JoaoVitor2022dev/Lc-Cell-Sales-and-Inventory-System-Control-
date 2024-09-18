@@ -16,5 +16,10 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         {
             InitializeComponent();
         }
+        private void SaleTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // 1 Passo  - abrir um outro formulario 
+
+        }
     }
 }
