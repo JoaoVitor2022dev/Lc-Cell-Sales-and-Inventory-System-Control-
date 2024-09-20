@@ -16,5 +16,25 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         {
             InitializeComponent();
         }
+
+        private void registrarVendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
