@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System;
 using Lc_Cell_Sistema_de_Controle.br.com.project.model;
 using System.Data;
+using Lc_Cell_Sistema_de_Controle.br.com.project.view;
 
 namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
 {
@@ -217,6 +218,62 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
                 return null;
             }
         }
+        #endregion
+
+        #region Login method
+        public bool LoginMethod(string email, string senha)
+        {
+            try
+            {
+                string sql = "SELECT * FROM tb_funcionarios WHERE email = @email AND senha = @senha";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@email", email);
+                executacmd.Parameters.AddWithValue("@senha", senha);
+
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string nivel = reader.GetString("nivel_acesso");
+                    string nome = reader.GetString("nome");
+
+                    MessageBox.Show($"Bem vindo {nome} - Acesso de {nivel}");
+
+                    FrmMenu TelaMenu = new FrmMenu();
+
+                    /*  TelaMenu.txtusuario.Text = nome;
+
+                     if (nivel.Equals("Administrador"))
+                     {
+                         TelaMenu.Show();
+                     }
+                     else if (nivel.Equals("Usuário"))
+                     {
+                         // personalizar o que o vendedorvai ter acesso 
+                         TelaMenu.MenuProdutos.Visible = false;
+                         TelaMenu.Show();
+                     }  */
+
+                    TelaMenu.Show();
+
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("E-mail ou senha incorreto!");
+                    return false;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Ocorreu um erro: {err}");
+                return false;
+            }
+        }
+
         #endregion
     }
 }

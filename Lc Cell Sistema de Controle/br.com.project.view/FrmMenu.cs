@@ -36,5 +36,10 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         {
 
         }
+
+        private void MenuCustomerRegister_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

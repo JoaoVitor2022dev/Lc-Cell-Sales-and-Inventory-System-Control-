@@ -90,6 +90,7 @@
             this.MenuCustomerRegister.Name = "MenuCustomerRegister";
             this.MenuCustomerRegister.Size = new System.Drawing.Size(180, 22);
             this.MenuCustomerRegister.Text = "Cadastrar Cliente";
+            this.MenuCustomerRegister.Click += new System.EventHandler(this.MenuCustomerRegister_Click);
             // 
             // MenuClientConsultation
             // 
@@ -157,13 +158,13 @@
             // MenuRegisterProduct
             // 
             this.MenuRegisterProduct.Name = "MenuRegisterProduct";
-            this.MenuRegisterProduct.Size = new System.Drawing.Size(180, 22);
+            this.MenuRegisterProduct.Size = new System.Drawing.Size(175, 22);
             this.MenuRegisterProduct.Text = "Cadastrar Produtos";
             // 
             // MenuProductConsultation
             // 
             this.MenuProductConsultation.Name = "MenuProductConsultation";
-            this.MenuProductConsultation.Size = new System.Drawing.Size(180, 22);
+            this.MenuProductConsultation.Size = new System.Drawing.Size(175, 22);
             this.MenuProductConsultation.Text = "Consulta Produtos ";
             // 
             // MenuSales
@@ -180,14 +181,14 @@
             // MenuNewSale
             // 
             this.MenuNewSale.Name = "MenuNewSale";
-            this.MenuNewSale.Size = new System.Drawing.Size(180, 22);
+            this.MenuNewSale.Size = new System.Drawing.Size(173, 22);
             this.MenuNewSale.Text = "Nova Venda";
             this.MenuNewSale.Click += new System.EventHandler(this.registrarVendaToolStripMenuItem_Click);
             // 
             // MenuHistorySale
             // 
             this.MenuHistorySale.Name = "MenuHistorySale";
-            this.MenuHistorySale.Size = new System.Drawing.Size(180, 22);
+            this.MenuHistorySale.Size = new System.Drawing.Size(173, 22);
             this.MenuHistorySale.Text = "Histórico de Venda";
             // 
             // MenuSettings
@@ -204,13 +205,13 @@
             // MenuChangeUser
             // 
             this.MenuChangeUser.Name = "MenuChangeUser";
-            this.MenuChangeUser.Size = new System.Drawing.Size(180, 22);
+            this.MenuChangeUser.Size = new System.Drawing.Size(154, 22);
             this.MenuChangeUser.Text = "Trocar Usuário";
             // 
             // MenuExitTheSystem
             // 
             this.MenuExitTheSystem.Name = "MenuExitTheSystem";
-            this.MenuExitTheSystem.Size = new System.Drawing.Size(180, 22);
+            this.MenuExitTheSystem.Size = new System.Drawing.Size(154, 22);
             this.MenuExitTheSystem.Text = "Sair do Sistema";
             this.MenuExitTheSystem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lc_Cell_Sistema_de_Controle.br.com.project.dao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.view
         public FrmLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            // botoa entrar
+            string email = txtEmail.Text;
+            string senha = txtPassword.Text;
+
+            EmployeeDAO dao = new EmployeeDAO();
+
+            if (dao.LoginMethod(email, senha) == true)
+            {
+                this.Hide();
+            }
         }
     }
 }
