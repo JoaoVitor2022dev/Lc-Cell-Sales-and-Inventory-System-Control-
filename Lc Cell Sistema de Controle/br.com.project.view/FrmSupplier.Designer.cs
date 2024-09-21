@@ -547,7 +547,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl TabSupplier;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnCep;
         private System.Windows.Forms.ComboBox txtUf;
@@ -576,7 +575,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodeClient;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView SupplierTable;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
@@ -585,5 +583,7 @@
         private System.Windows.Forms.Button BtnEdit;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnNew;
+        public System.Windows.Forms.TabControl TabSupplier;
+        public System.Windows.Forms.TabPage tabPage2;
     }
 }

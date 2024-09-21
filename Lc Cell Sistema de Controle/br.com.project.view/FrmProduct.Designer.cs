@@ -212,6 +212,7 @@
             // 
             // ProductTable
             // 
+            this.ProductTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProductTable.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.ProductTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductTable.Location = new System.Drawing.Point(6, 74);
@@ -341,13 +342,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl TabPorduct;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodeClient;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView ProductTable;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
@@ -363,5 +362,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbSupplier;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        public System.Windows.Forms.TabControl TabPorduct;
+        public System.Windows.Forms.TabPage tabPage2;
     }
 }

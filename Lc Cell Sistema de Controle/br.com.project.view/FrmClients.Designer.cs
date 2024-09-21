@@ -575,9 +575,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl TabClient;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txtCodeClient;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
@@ -615,5 +613,7 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnCep;
+        public System.Windows.Forms.TabControl TabClient;
+        public System.Windows.Forms.TabPage tabPage2;
     }
 }
