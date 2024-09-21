@@ -49,11 +49,11 @@
             this.MenuExitTheSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txtDateCurrent = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txtCurrentTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txtMenuUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -88,14 +88,14 @@
             // MenuCustomerRegister
             // 
             this.MenuCustomerRegister.Name = "MenuCustomerRegister";
-            this.MenuCustomerRegister.Size = new System.Drawing.Size(180, 22);
+            this.MenuCustomerRegister.Size = new System.Drawing.Size(165, 22);
             this.MenuCustomerRegister.Text = "Cadastrar Cliente";
             this.MenuCustomerRegister.Click += new System.EventHandler(this.MenuCustomerRegister_Click);
             // 
             // MenuClientConsultation
             // 
             this.MenuClientConsultation.Name = "MenuClientConsultation";
-            this.MenuClientConsultation.Size = new System.Drawing.Size(180, 22);
+            this.MenuClientConsultation.Size = new System.Drawing.Size(165, 22);
             this.MenuClientConsultation.Text = "Consultar Cliente";
             // 
             // MenuEmployee
@@ -219,11 +219,11 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
+            this.txtDateCurrent,
             this.toolStripStatusLabel3,
-            this.toolStripStatusLabel4,
+            this.txtCurrentTime,
             this.toolStripStatusLabel5,
-            this.toolStripStatusLabel6});
+            this.txtMenuUser});
             this.statusStrip1.Location = new System.Drawing.Point(0, 697);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1098, 22);
@@ -237,12 +237,12 @@
             this.toolStripStatusLabel1.Text = "Data Atual:";
             this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
-            // toolStripStatusLabel2
+            // txtDateCurrent
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(65, 17);
-            this.toolStripStatusLabel2.Text = "18/09/2024";
-            this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
+            this.txtDateCurrent.Name = "txtDateCurrent";
+            this.txtDateCurrent.Size = new System.Drawing.Size(65, 17);
+            this.txtDateCurrent.Text = "18/09/2024";
+            this.txtDateCurrent.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
             // 
             // toolStripStatusLabel3
             // 
@@ -250,11 +250,11 @@
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(67, 17);
             this.toolStripStatusLabel3.Text = "Hora Atual:";
             // 
-            // toolStripStatusLabel4
+            // txtCurrentTime
             // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(49, 17);
-            this.toolStripStatusLabel4.Text = "17:55:00";
+            this.txtCurrentTime.Name = "txtCurrentTime";
+            this.txtCurrentTime.Size = new System.Drawing.Size(49, 17);
+            this.txtCurrentTime.Text = "17:55:00";
             // 
             // toolStripStatusLabel5
             // 
@@ -262,11 +262,12 @@
             this.toolStripStatusLabel5.Size = new System.Drawing.Size(93, 17);
             this.toolStripStatusLabel5.Text = "Usuário Logado:";
             // 
-            // toolStripStatusLabel6
+            // txtMenuUser
             // 
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(123, 17);
-            this.toolStripStatusLabel6.Text = "Joao Vitor Mocambite";
+            this.txtMenuUser.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.txtMenuUser.Name = "txtMenuUser";
+            this.txtMenuUser.Size = new System.Drawing.Size(123, 17);
+            this.txtMenuUser.Text = "Joao Vitor Mocambite";
             // 
             // FrmMenu
             // 
@@ -292,7 +293,6 @@
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem MenuCliente;
-        private System.Windows.Forms.ToolStripMenuItem MenuEmployee;
         private System.Windows.Forms.ToolStripMenuItem MenuSupplier;
         private System.Windows.Forms.ToolStripMenuItem MenuProduct;
         private System.Windows.Forms.ToolStripMenuItem MenuSales;
@@ -311,10 +311,11 @@
         private System.Windows.Forms.ToolStripMenuItem MenuExitTheSystem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel txtDateCurrent;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripStatusLabel txtCurrentTime;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
+        public System.Windows.Forms.ToolStripStatusLabel txtMenuUser;
+        public System.Windows.Forms.ToolStripMenuItem MenuEmployee;
     }
 }

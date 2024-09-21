@@ -240,11 +240,11 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
                     string nivel = reader.GetString("nivel_acesso");
                     string nome = reader.GetString("nome");
 
-                    MessageBox.Show($"Bem vindo {nome} - Acesso de {nivel}");
+                    MessageBox.Show($"Bem vindo {nivel}: {nome}");
 
                     FrmMenu TelaMenu = new FrmMenu();
 
-                    /*  TelaMenu.txtusuario.Text = nome;
+                     TelaMenu.txtMenuUser.Text = nome;
 
                      if (nivel.Equals("Administrador"))
                      {
@@ -253,12 +253,9 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
                      else if (nivel.Equals("Usuário"))
                      {
                          // personalizar o que o vendedorvai ter acesso 
-                         TelaMenu.MenuProdutos.Visible = false;
+                         TelaMenu.MenuEmployee.Visible = false;
                          TelaMenu.Show();
-                     }  */
-
-                    TelaMenu.Show();
-
+                     }  
                     return true;
                 }
                 else
@@ -273,7 +270,6 @@ namespace Lc_Cell_Sistema_de_Controle.br.com.project.dao
                 return false;
             }
         }
-
         #endregion
     }
 }
