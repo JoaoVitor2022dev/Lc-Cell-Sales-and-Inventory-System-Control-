@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProduct));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.TabPorduct = new System.Windows.Forms.TabControl();
@@ -323,6 +324,7 @@
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.BtnNew);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProduct";
             this.Text = "Cadastro de Produtos";
             this.Load += new System.EventHandler(this.FrmProduct_Load);

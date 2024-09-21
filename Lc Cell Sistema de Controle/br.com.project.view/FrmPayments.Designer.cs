@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPayments));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtMoney = new System.Windows.Forms.TextBox();
@@ -196,6 +197,7 @@
             this.Controls.Add(this.txtMoney);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPayments";
             this.Text = "Tela de Pagamentos";
             this.Load += new System.EventHandler(this.FrmPayments_Load);

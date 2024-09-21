@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtDateCurrent = new System.Windows.Forms.ToolStripStatusLabel();
@@ -208,14 +209,14 @@
             // MenuRegisterProduct
             // 
             this.MenuRegisterProduct.Name = "MenuRegisterProduct";
-            this.MenuRegisterProduct.Size = new System.Drawing.Size(180, 22);
+            this.MenuRegisterProduct.Size = new System.Drawing.Size(175, 22);
             this.MenuRegisterProduct.Text = "Cadastrar Produtos";
             this.MenuRegisterProduct.Click += new System.EventHandler(this.MenuRegisterProduct_Click);
             // 
             // MenuProductConsultation
             // 
             this.MenuProductConsultation.Name = "MenuProductConsultation";
-            this.MenuProductConsultation.Size = new System.Drawing.Size(180, 22);
+            this.MenuProductConsultation.Size = new System.Drawing.Size(175, 22);
             this.MenuProductConsultation.Text = "Consulta Produtos ";
             this.MenuProductConsultation.Click += new System.EventHandler(this.MenuProductConsultation_Click);
             // 
@@ -240,7 +241,7 @@
             // MenuHistorySale
             // 
             this.MenuHistorySale.Name = "MenuHistorySale";
-            this.MenuHistorySale.Size = new System.Drawing.Size(180, 22);
+            this.MenuHistorySale.Size = new System.Drawing.Size(173, 22);
             this.MenuHistorySale.Text = "Histórico de Venda";
             this.MenuHistorySale.Click += new System.EventHandler(this.MenuHistorySale_Click);
             // 
@@ -296,6 +297,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip2);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMenu";
             this.Text = "MENU LC CELL";
             this.Load += new System.EventHandler(this.FrmMenu_Load);

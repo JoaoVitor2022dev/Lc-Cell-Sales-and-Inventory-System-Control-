@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClients));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.TabClient = new System.Windows.Forms.TabControl();
@@ -556,6 +557,7 @@
             this.Controls.Add(this.BtnNew);
             this.Controls.Add(this.TabClient);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmClients";
             this.Text = "Cadastrar Formulário";
             this.Load += new System.EventHandler(this.FrmClients_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSupplier));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.TabSupplier = new System.Windows.Forms.TabControl();
@@ -528,6 +529,7 @@
             this.Controls.Add(this.BtnNew);
             this.Controls.Add(this.TabSupplier);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSupplier";
             this.Text = "Cadastro de Fornecedor ";
             this.Load += new System.EventHandler(this.FrmSupplier_Load);
